@@ -17,15 +17,15 @@ public class SwaggerConfig {
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("zerobase.weather"))
                 .paths(PathSelectors.any())
                 .build().apiInfo(apiInfo());
     }
 
     public ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("title")
-                .description("description")
+                .title("날씨 일기 프로젝트")
+                .description("날씨 일기를 crud 할 수 있는 백엔드 api 입니다.")
                 .version("1.0")
                 .build();
     }
